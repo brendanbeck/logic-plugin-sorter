@@ -29,7 +29,7 @@ No manual intervention inside Logic's Plug-In Manager is required; this is done 
 2. Set your ChatGPT API key as an environment variable to `OPENAI_API_KEY`.
 3. Change the settings in `config.json`. Ideally you will just need to change the `tags_directory` path and then provide your categories as an array of strings in `categories`.
 4. Ensure that Logic Pro is not running
-5. Execute the script (`python LogicPluginSorter.py)
+5. Execute the script (`python LogicPluginSorter.py`)
 
 Before making any changes, the script will create a backup copy of your current `Tags` folder in the case that something goes wrong at `./backup`. Application logs and sorting results will be written to a log file in `./logs`.
 
