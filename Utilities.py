@@ -28,7 +28,7 @@ def get_plugins(directory: str) -> dict[str, list[str] | list[Plugin]]:
         with open(component_path + "/Contents/Info.plist", 'rb') as infile:
             component_plist = plistlib.load(infile)
             if component_plist.get("AudioComponents") is None:
-                unsortable_plugins.append(component_path[len(directory)+1:])
+                unsortable_plugins.append(component_path[len(directory) + 1:])
                 continue
             for component_metadata in component_plist["AudioComponents"]:
                 sortable_plugins.append(Plugin(component_metadata["name"], component_metadata["manufacturer"],
@@ -54,3 +54,15 @@ def set_db_tagpool(directory: str, categories: list[str]) -> None:
     music_apps_tp_plist.update(category_tagpool_map)
     with open(directory + "/MusicApps.tagpool", 'wb') as infile:
         plistlib.dump(music_apps_tp_plist, infile)
+
+
+def write_category(directory: str, plugin: Plugin) -> None:
+    with open(directory + "/" + plugin.get_tagset() + ".tagset", 'rb') as infile:
+        tagset_plist = plistlib.load(infile)
+    [tagset_plist["tags"].pop(key) for key in list(tagset_plist["tags"].keys())]
+    new_category = {plugin.get_category(): "user"}
+    tagset_plist["tags"].update(new_category)
+    with open(directory + "/" + plugin.get_tagset() + ".tagset", 'wb') as infile:
+        plistlib.dump(tagset_plist, infile)
+
+

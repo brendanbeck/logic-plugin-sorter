@@ -11,7 +11,6 @@ fh.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 logger.addHandler(fh)
-
 logger.log(20, "Running logic plugin sorter...")
 
 config = Utilities.load_json("config.json")
@@ -30,3 +29,5 @@ Utilities.set_db_properties(config["tags_directory"], config["categories"])
 
 logger.log(20, "Writing categories to MusicApps.tagpool...")
 Utilities.set_db_tagpool(config["tags_directory"], config["categories"])
+
+

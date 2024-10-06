@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e29f4ea-a626-42c9-8140-61ad6eb603d9" name="Changes" comment="wip - added some bag logging and bad code. category creation works now" />
+    <list default="true" id="5e29f4ea-a626-42c9-8140-61ad6eb603d9" name="Changes" comment="wip - removed full dir from insufficient plugin logging">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogicPluginSorter.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogicPluginSorter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utilities.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +39,7 @@
     "Python.LogicPluginSorter.executor": "Run",
     "Python.Plugin.executor": "Run",
     "Python.TagsetSolver.executor": "Debug",
-    "Python.Utilities.executor": "Run",
+    "Python.Utilities.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -63,7 +68,8 @@
       <updated>1728003237667</updated>
       <workItem from="1728003239305" duration="7428000" />
       <workItem from="1728012980450" duration="246000" />
-      <workItem from="1728171652584" duration="15300000" />
+      <workItem from="1728171652584" duration="15608000" />
+      <workItem from="1728227469931" duration="3262000" />
     </task>
     <task id="LOCAL-00001" summary="wip - left off on handling components with no AudioComponents definition">
       <option name="closed" value="true" />
@@ -81,7 +87,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728188183693</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="wip - removed full dir from insufficient plugin logging">
+      <option name="closed" value="true" />
+      <created>1728189017203</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728189017203</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,12 +104,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="wip - left off on handling components with no AudioComponents definition" />
     <MESSAGE value="wip - added some bag logging and bad code. category creation works now" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip - added some bag logging and bad code. category creation works now" />
+    <MESSAGE value="wip - removed full dir from insufficient plugin logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip - removed full dir from insufficient plugin logging" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/logic_plugin_sorter$TagsetSolver.coverage" NAME="TagsetSolver Coverage Results" MODIFIED="1728172631931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/logic_plugin_sorter$LogicPluginSorter.coverage" NAME="LogicPluginSorter Coverage Results" MODIFIED="1728188072016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/logic_plugin_sorter$LogicPluginSorter.coverage" NAME="LogicPluginSorter Coverage Results" MODIFIED="1728188897741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/logic_plugin_sorter$Plugin.coverage" NAME="Plugin Coverage Results" MODIFIED="1728005687987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/logic_plugin_sorter$Utilities.coverage" NAME="Utilities Coverage Results" MODIFIED="1728187318901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/logic_plugin_sorter$Utilities.coverage" NAME="Utilities Coverage Results" MODIFIED="1728229860648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

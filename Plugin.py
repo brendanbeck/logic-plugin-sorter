@@ -18,4 +18,8 @@ class Plugin:
     def set_category(self, category: str):
         self._category = category
 
+    def get_category(self):
+        return self._category
 
+    def get_tagset(self):
+        return self.tagset
