@@ -1,11 +1,11 @@
 {
-  "openai_api_key": "",
   "plugins_directory": "/Library/Audio/Plug-Ins/Components",
   "tags_directory": "/Users/brendanbeck/Music/Audio Music Apps/Databases/Tags",
   "tags_backup_directory": "backup",
   "logs_directory": "logs",
   "categories": [
-    "a",
-    "b"
+    "Mixing",
+    "Synthesizers and Samplers",
+    "Utilities and Tools"
   ]
 }

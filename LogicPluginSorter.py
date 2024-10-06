@@ -1,6 +1,8 @@
 import logging
 from datetime import datetime
 
+from openai import OpenAI
+
 import Utilities
 
 time = datetime.now().strftime("%m%d%Y%H%M%S")
@@ -30,4 +32,14 @@ Utilities.set_db_properties(config["tags_directory"], config["categories"])
 logger.log(20, "Writing categories to MusicApps.tagpool...")
 Utilities.set_db_tagpool(config["tags_directory"], config["categories"])
 
+logger.log(20, "Setting up OpenAI client...")
+client = OpenAI()
+
+logger.log(20, "Evaluating plugin categories...")
+for plugin in plugins["sortable_plugins"]:
+    Utilities.eval_plugin_category(plugin, client, config['categories'])
+    Utilities.write_category(config["tags_directory"], plugin)
+    logger.log(20, "Plugin " + plugin.get_name() + " assigned to " + plugin.get_category())
+
+logger.log(20, "Sorting completed")
 

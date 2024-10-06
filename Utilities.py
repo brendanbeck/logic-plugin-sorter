@@ -4,6 +4,7 @@ import plistlib
 import shutil
 
 from Plugin import Plugin
+from openai import OpenAI
 
 
 def load_json(filename: str) -> dict:
@@ -56,13 +57,33 @@ def set_db_tagpool(directory: str, categories: list[str]) -> None:
         plistlib.dump(music_apps_tp_plist, infile)
 
 
+def eval_plugin_category(plugin: Plugin, client: OpenAI, categories: list[str]) -> None:
+    prompt = ("What category would the audio unit " + plugin.name +
+              " best belong to out of the following comma separated categories: " +
+              str(categories)[1:-1] + ". Answer with only one of the" +
+              " given categories and nothing else. Do not include quotes in the answer.")
+
+    completion = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+    plugin.set_category(completion.choices[0].message.content)
+
+
 def write_category(directory: str, plugin: Plugin) -> None:
     with open(directory + "/" + plugin.get_tagset() + ".tagset", 'rb') as infile:
         tagset_plist = plistlib.load(infile)
-    [tagset_plist["tags"].pop(key) for key in list(tagset_plist["tags"].keys())]
+    if tagset_plist.get("tags") is not None:
+        [tagset_plist["tags"].pop(key) for key in list(tagset_plist.get("tags").keys())]
+    else:
+        tagset_plist["tags"] = {}
     new_category = {plugin.get_category(): "user"}
     tagset_plist["tags"].update(new_category)
     with open(directory + "/" + plugin.get_tagset() + ".tagset", 'wb') as infile:
         plistlib.dump(tagset_plist, infile)
-
-

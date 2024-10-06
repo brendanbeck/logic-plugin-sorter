@@ -23,3 +23,6 @@ class Plugin:
 
     def get_tagset(self):
         return self.tagset
+
+    def get_name(self):
+        return self.name
