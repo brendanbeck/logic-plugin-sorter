@@ -1,7 +1,7 @@
 # logic-scripter-cc-controller
 
 ### Overview
-This is a quick Python script I whipped up which automatically sorts your audio units in Logic Pro according to categories you provide. This is done by simply asking ChatGPT what category best describes a given plugin.
+This is a quick Python script I whipped up which automatically sorts your audio units in Logic Pro according to categories you provide. I made this for myself but thought I'd make this public in case anyone wants to use it. This is done by simply asking ChatGPT what category best describes a given plugin.
 
 No manual intervention inside Logic's Plug-In Manager is required; this is done by reading from your audio units' plist metadata and writing directly to Logic Pro's Plug-In Manager tagging settings located in `user/Music/Audio Music Apps/Databases/Tags/`. 
 
@@ -10,7 +10,7 @@ No manual intervention inside Logic's Plug-In Manager is required; this is done 
 ![Screenshot 2024-10-06 at 3 04 40 PM](https://github.com/user-attachments/assets/85953443-a68b-4d9d-b410-24afd4a2a66a)
 
 ### Limitations
-- Requires the use of OpenAI's API which is not free. However, be rest assured that this script uses very little tokens in the request and response. By sorting 1000+ plugins on my Mac, I used a couple of cents worth of credits at most. 
+- Requires the use of OpenAI's API which is not free. However, be rest assured that this script uses very little tokens in the request and response. By sorting 1000+ plugins on my Mac, I used a couple of cents worth of credits (roughly 30-40) at most. 
   - I did consider to have OpenAI sort the plugins in an entire batch to save tokens, but this introduces more possibility for error on the response. The cost is negligible, especially considering the risk of giving a malformed response.
   - At the time of creating this, I did try open source LLMs that could be embedded (such as Meta's Llama 3.2), but unfortunately they did not perform well on the responses unless the audio unit in question was very widely known. Even then, it even misclassified some Native Instruments audio units. With OpenAI's `gpt-4o` model, it was correctly classifying virtually all plugins.
 - Audio units which are very new or not known have a chance of being misclassified (although this possibility is very, very small with `gpt-4o` in my experience).
