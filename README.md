@@ -1,24 +1,22 @@
 # logic-scripter-cc-controller
 
 ### Overview
-This is a quick Python script I whipped up which automatically sorts your audio units in Logic Pro according to categories you provide. I made this for myself but thought I'd make this public in case anyone wants to use it. This is done by simply asking ChatGPT what category best describes a given plugin.
+This is a quick Python script I whipped up which automatically sorts your audio units in Logic Pro according to categories you provide. I made this for myself but thought I'd make this public in case anyone wants to use it. 
 
-No manual intervention inside Logic's Plug-In Manager is required; this is done by reading from your audio units' plist metadata and writing directly to Logic Pro's Plug-In Manager tagging settings located in `user/Music/Audio Music Apps/Databases/Tags/`. 
+No manual intervention inside Logic's Plug-In Manager is required; this is done by reading from your audio units' plist metadata and writing directly to Logic Pro's Plug-In Manager tagging settings located in `user/Music/Audio Music Apps/Databases/Tags/`. The categorizations of plug-ins is done through OpenAI's API.
 
 ![Screenshot 2024-10-06 at 3 05 24 PM](https://github.com/user-attachments/assets/cb4f7d6f-3c18-491e-9406-05df131e7716)
 
 ![Screenshot 2024-10-06 at 3 04 40 PM](https://github.com/user-attachments/assets/85953443-a68b-4d9d-b410-24afd4a2a66a)
 
 ### Limitations
-- Requires the use of OpenAI's API which is not free. However, be rest assured that this script uses very little tokens in the request and response. By sorting 1000+ plugins on my Mac, I used a couple of cents worth of credits (roughly 30-40) at most. 
-  - I did consider to have OpenAI sort the plugins in an entire batch to save tokens, but this introduces more possibility for error on the response. The cost is negligible, especially considering the risk of giving a malformed response.
-  - At the time of creating this, I did try open source LLMs that could be embedded (such as Meta's Llama 3.2), but unfortunately they did not perform well on the responses unless the audio unit in question was very widely known. Even then, it even misclassified some Native Instruments audio units. With OpenAI's `gpt-4o` model, it was correctly classifying virtually all plugins.
-- Audio units which are very new or not known have a chance of being misclassified (although this possibility is very, very small with `gpt-4o` in my experience).
-- Audio units whose `.plist` file that does not define `<AudioComponents>` cannot be sorted; At this time I have no way of deriving the tagset title of an audio unit (at least, not a simple way that does not require other languages) without this information.
+- Requires the use of OpenAI's API which is not free. By sorting 1000+ plugins on my Mac, I used a couple of cents worth of credits (roughly 30-40) at most. 
+  - I did consider to have OpenAI sort the plugins in an entire batch to save tokens, but this introduces more possibility for error on the response. 
+  - At the time of making this, I did try open source LLMs that could be embedded (such as Meta's Llama 3), but unfortunately they did not perform well on the responses unless the audio unit in question was very widely known. Even then, it even misclassified some Native Instruments audio units. With OpenAI's `gpt-4o` model, it was correctly classifying virtually all plugins.
+- Audio units whose `.plist` file that does not define `<AudioComponents>` cannot be sorted; At this time I have no way of deriving the tagset of an audio unit (at least, not from Python) without this information.
   - Of the 1000+ audio units I have installed, only eight of them did not have this defined.
 - Plugins provided by Apple (whether the manufacturer is labeled "Apple" or "Logic") are not handled by this script. I'm not sure where to find `plist` information for these plugins (or if you even can).
   - In theory you could make a dictionary of the known tagsets for these plugins and then include these in the script, but that requires a lot of manual work and its unknown to me if the tagset titles change over time.
-    - E.g., move an Apple-provided plugin into a category in Logic's Plug-In Manager. The tagset file that is most recently modified in `user/Music/Audio Music Apps/Databases/Tags/` corresponds to that plugin.
 
 ### Setup
 
