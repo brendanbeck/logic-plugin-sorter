@@ -5,6 +5,9 @@ This is a quick Python script I whipped up which automatically sorts your audio 
 
 No manual intervention inside Logic's Plug-In Manager is required; this is done by reading from your audio units' plist metadata and writing directly to Logic Pro's Plug-In Manager tagging settings located in `user/Music/Audio Music Apps/Databases/Tags/`. 
 
+![Screenshot 2024-10-06 at 3 05 14 PM](https://github.com/user-attachments/assets/24a3352d-5ba5-4728-ab53-4e855a30251a)
+![Screenshot 2024-10-06 at 3 04 40 PM](https://github.com/user-attachments/assets/85953443-a68b-4d9d-b410-24afd4a2a66a)
+
 ### Limitations
 - Requires the use of OpenAI's API which is not free. However, be rest assured that this script uses very little tokens in the request and response. By sorting 1000+ plugins on my Mac, I used a couple of cents worth of credits at most. 
   - I did consider to have OpenAI sort the plugins in an entire batch to save tokens, but this introduces more possibility for error on the response. The cost is negligible, especially considering the risk of giving a malformed response.
