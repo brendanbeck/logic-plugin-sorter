@@ -28,7 +28,7 @@ def get_plugins(directory: str) -> dict[str, list[str] | list[Plugin]]:
         with open(component_path + "/Contents/Info.plist", 'rb') as infile:
             component_plist = plistlib.load(infile)
             if component_plist.get("AudioComponents") is None:
-                unsortable_plugins.append(component_path)
+                unsortable_plugins.append(component_path[len(directory)+1:])
                 continue
             for component_metadata in component_plist["AudioComponents"]:
                 sortable_plugins.append(Plugin(component_metadata["name"], component_metadata["manufacturer"],
