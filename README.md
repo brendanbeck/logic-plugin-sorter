@@ -3,7 +3,7 @@
 ### Overview
 This is a quick Python script I whipped up which automatically sorts your audio units in Logic Pro according to categories you provide. I made this for myself but thought I'd make this public in case anyone wants to use it. 
 
-No manual intervention inside Logic's Plug-In Manager is required; this is done by reading from your audio units' plist metadata and writing directly to Logic Pro's Plug-In Manager tagging settings located in `user/Music/Audio Music Apps/Databases/Tags/`. The categorizations of plug-ins is done through OpenAI's API.
+No manual intervention inside Logic's Plug-In Manager is required; this is done by reading from your audio units' plist metadata and writing directly to Logic Pro's Plug-In Manager tagging settings located in `user/Music/Audio Music Apps/Databases/Tags/`. The categorizations of plug-ins are done through OpenAI's API.
 
 ![Screenshot 2024-10-06 at 3 05 24 PM](https://github.com/user-attachments/assets/cb4f7d6f-3c18-491e-9406-05df131e7716)
 
