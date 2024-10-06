@@ -3,5 +3,5 @@
   "tags_directory": "/Users/brendanbeck/Music/Audio Music Apps/Databases/Tags",
   "tags_backup_directory": "backup",
   "logs_directory": "logs",
-  "categories": ["Amps and Pedals", "Amps and Pedals:Stompboxes:Delay", "Amps and Pedals:Stompboxes:Distortion", "Amps and Pedals:Stompboxes:Dynamics", "Amps and Pedals:Stompboxes:Filter", "Amps and Pedals:Stompboxes:Modulation", "Amps and Pedals:Stompboxes:Pitch", "Delay", "Distortion", "Dynamics", "EQ", "EQ:Vintage EQ Collection", "Filter", "Imaging", "Metering", "Playable", "Modulation", "Multi Effects", "Pitch", "Reverb", "Specialized", "Utillity"]
+  "categories": ["Amps and Pedals", "Amps and Pedals:Stompboxes:Delay", "Amps and Pedals:Stompboxes:Distortion", "Amps and Pedals:Stompboxes:Dynamics", "Amps and Pedals:Stompboxes:Filter", "Amps and Pedals:Stompboxes:Modulation", "Amps and Pedals:Stompboxes:Pitch", "Delay", "Distortion", "Dynamics", "EQ", "EQ:Vintage EQ Collection", "Filter", "Imaging", "Metering", "Playable", "Playable:Percussion", "Playable:Samplers and Synthesizers", "Playable:Keys", "Playable:Orchestral", "Modulation", "Multi Effects", "Music Theory", "Pitch", "Reverb", "Specialized", "Utility"]
 }
